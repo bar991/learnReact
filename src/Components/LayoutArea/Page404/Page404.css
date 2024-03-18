@@ -1,0 +1,10 @@
+.Page404 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Page404 > iframe{
+    width: 200px;
+	margin: 200px;
+}
