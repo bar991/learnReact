@@ -10,6 +10,11 @@ class ProductService {
         console.log(response);
         return products;
     }
+    public async getOneProduct(id:number): Promise<ProductModel>{
+        const response = await axios.get<ProductModel>(appConfig.productsurl+ id);
+        const product = response.data;
+        return product;
+    } 
 }
 
 export const productService = new ProductService();
