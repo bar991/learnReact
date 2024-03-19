@@ -1,8 +1,8 @@
 import axios from "axios";
 import { EmployeeModel } from "../Models/EmployeeModel";
 import { appConfig } from "../Utils/AppConfig";
-
 class EmployeeService {
+
 
     public async getAllEmployees(): Promise<EmployeeModel[]> {
         const response = await axios.get<EmployeeModel[]>(appConfig.employeeurl);
@@ -17,5 +17,6 @@ class EmployeeService {
         return employee;
     }
 
-}
-export const EmployeeService = new EmployeeService();
+
+
+export const employeeService = new EmployeeService();
