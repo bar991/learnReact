@@ -3,7 +3,7 @@ height: 100%;
 text-align: center;
 margin: 0;
 padding: 0;
-background-image: linear-gradient(white,blue);}
+background-image: linear-gradient(#AFEEEE,#87CEEB);}
 a{
     color: blue;
 }
@@ -20,4 +20,11 @@ form input, form button {
    width: 100%;
    box-sizing: border-box; 
    margin-bottom: 20px;
+}
+.error{
+    color: red;
+    position: absolute;
+    margin-left: 40px;
+
+
 }

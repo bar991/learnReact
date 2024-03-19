@@ -1,0 +1,11 @@
+export class EmployeeModel{
+    public id: number;
+    public firstName: string;
+    public lastName: string;
+    public title: string;
+    public country: string;
+    public city: string;
+    public birthdate: Date;
+    public imageUrl: string;
+    public image: File;
+}
