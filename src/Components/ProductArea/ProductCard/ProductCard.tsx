@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { ProductModel } from "../../../Models/ProductModel";
 import "./ProductCard.css";
+
+//בניית type
 type ProductCardProps = {
     product: ProductModel;
 }
@@ -14,11 +16,10 @@ export function ProductCard(props: ProductCardProps): JSX.Element {
 
             </div>
             <div>
-                <NavLink to={"/products/"+ props.product.id}>
-                <img src={props.product.imageUrl} />
-       </NavLink>
+                <NavLink to={"/products/" + props.product.id}>
+                    <img src={props.product.imageUrl} />
+                </NavLink>
             </div>
-
         </div>
     );
 }
