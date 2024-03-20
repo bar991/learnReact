@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { EmployeeModel } from "../../../Models/EmployeeModel";
 import { employeeService } from "../../../Services/EmployeeService";
 import { notify } from "../../../Utils/Notify";
+import { useTitle } from "../../../Utils/UseTitle";
+import { Spinner } from "../../SharedArea/Spinner/Spinner";
+import { EmployeeCard } from "../EmployeeCard/EmployeeCard";
 import "./EmployeeList.css";
 
 export function EmployeeList(): JSX.Element {
+    useTitle("Employees | EmployeeList");
+
     const [employees, setEmployees] = useState<EmployeeModel[]>([]);
         useEffect(() => {
         employeeService.getAllEmployees()
@@ -34,11 +40,16 @@ export function EmployeeList(): JSX.Element {
                               <td>{e.city} </td>
                               <td>{e.birthDate}</td>
                               <td>
-                                  <img src={e.imageUrl} />
+                              <NavLink to={"/employees/" + e.id}>
+                              <img src={e.imageUrl} />
+                </NavLink>
                               </td>
                               </tr>)}
                           </tbody>
                       </table>
+                      
+            {employees.length ===0 && <Spinner />}
+            {employees.map(e => <EmployeeCard key={e.id} employee={e} />)}
         </div>
     );
 }

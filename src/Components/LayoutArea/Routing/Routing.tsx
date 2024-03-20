@@ -1,5 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router";
+import { addEmployee } from "../../../Storage/reducers";
+import { AddEmployee } from "../../EmployeeArea/AddEmployee/AddEmployee";
+import { EmployeeDetails } from "../../EmployeeArea/EmployeeDetails/EmployeeDetails";
 import { EmployeeList } from "../../EmployeeArea/EmployeeList/EmployeeList";
 // import { EmployeeDetails } from "../../EmployeeArea/EmployeeDetails/EmployeeDetails";
 // import { EmployeeList } from "../../EmployeeArea/EmployeeList/EmployeeList";
@@ -28,7 +31,9 @@ export function Routing(): JSX.Element {
                 <Route path="/products/:id" element={<ProductDetails />} />
                 <Route path="/products/new" element={<AddProduct />} />
                 <Route path="/products/edit/:id" element={<EditProduct />} />
-                <Route path="employees" element={<EmployeeList />} />
+                <Route path="employees/" element={<EmployeeList />} />
+                <Route path="/employees/:id" element={<EmployeeDetails />} />
+                <Route path="/employees/new" element={<AddEmployee />} />
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="*" element={<Page404 />} />
             </Routes>

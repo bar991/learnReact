@@ -1,12 +1,9 @@
-import { get } from "http";
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { ProductModel } from "../../../Models/ProductModel";
 import { productService } from "../../../Services/ProductService";
 import { notify } from "../../../Utils/Notify";
-import { useTitle } from "../../../Utils/UseTitle";
 import { Spinner } from "../../SharedArea/Spinner/Spinner";
-import { ProductCard } from "../ProductCard/ProductCard";
 import "./ProductDetails.css";
 
 export function ProductDetails(): JSX.Element {
