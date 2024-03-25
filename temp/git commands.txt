@@ -9,3 +9,7 @@ git push -u origin main
 https://jwt.io/ - site to decode token
 material ui -אתר המכיל פעולות על רכיבים מעוצבים בריאקט
 https://mui.com/
+
+if we change something
+npm run build 
+firebase deploy
