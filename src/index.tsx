@@ -5,16 +5,22 @@ import { Layout } from './Components/LayoutArea/Layout/Layout';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { store } from './Storage/store';
-
+import { interceptors } from './Utils/Interceptors';
+import { ThemeProvider } from '@mui/material';
+import { myTheme } from './Utils/Theme';
+//Register interceptors:
+interceptors.registerInterceptors();
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <Provider store={store}>
-<BrowserRouter>
-<Layout />
-</BrowserRouter>
-</Provider>
+        <BrowserRouter>
+            <ThemeProvider theme={myTheme}>
+                <Layout />
+            </ThemeProvider>
+        </BrowserRouter>
+    </Provider>
 
 );
 

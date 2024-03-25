@@ -15,6 +15,9 @@ import { ProductList } from "../../ProductArea/ProductList/ProductList";
 import { Spinner } from "../../SharedArea/Spinner/Spinner";
 import { Page404 } from "../Page404/Page404";
 import "./Routing.css";
+import { Register } from "../../AuthArea/Register/Register";
+import { Login } from "../../AuthArea/Login/Login";
+import { ContactUs } from "../../AboutArea/ContactUs/ContactUs";
 
 export function Routing(): JSX.Element {
     //Describe where the about component located:
@@ -25,13 +28,16 @@ export function Routing(): JSX.Element {
     return (
         <div className="Routing">
             <Routes>
+                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/about" element={SuspendsAbout} />
                 <Route path="/products/" element={<ProductList />} />
                 <Route path="/products/:id" element={<ProductDetails />} />
                 <Route path="/products/new" element={<AddProduct />} />
                 <Route path="/products/edit/:id" element={<EditProduct />} />
-                <Route path="employees/" element={<EmployeeList />} />
+                <Route path="/employees/" element={<EmployeeList />} />
                 <Route path="/employees/:id" element={<EmployeeDetails />} />
                 <Route path="/employees/new" element={<AddEmployee />} />
                 <Route path="/" element={<Navigate to="/home" />} />

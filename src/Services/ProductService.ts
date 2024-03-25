@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ProductModel } from "../Models/ProductModel";
-import { actions, store } from "../Storage/store";
+import { productActions, store } from "../Storage/store";
 import { appConfig } from "../Utils/AppConfig";
 
 class ProductService {
@@ -10,7 +10,7 @@ class ProductService {
         const response = await axios.get<ProductModel[]>(appConfig.productsurl);
         const products = response.data;
         //save in global state:
-        store.dispatch(actions.initProducts(products));
+        store.dispatch(productActions.initProducts(products));
         return products;
     }
     public async getOneProduct(id: number): Promise<ProductModel> {
@@ -28,7 +28,7 @@ class ProductService {
         const response = await axios.post<ProductModel>(appConfig.productsurl, product, options);
         const dbProduct = response.data;
         //add product to global state:
-        store.dispatch(actions.addProduct(dbProduct));
+        store.dispatch(productActions.addProduct(dbProduct));
         console.log(dbProduct);
     }
     public async updateProduct(product: ProductModel): Promise<void> {
@@ -37,7 +37,7 @@ class ProductService {
         const response = await axios.put<ProductModel>(appConfig.productsurl + product.id, product, options);
         const dbProduct = response.data;
         //Update product in global state:
-        store.dispatch(actions.updateProduct(dbProduct));
+        store.dispatch(productActions.updateProduct(dbProduct));
         console.log(dbProduct);
     }
     public async deleteProduct(id: number): Promise<void> { //send text and files
@@ -45,7 +45,7 @@ class ProductService {
         const response = await axios.delete<ProductModel>(appConfig.productsurl + id);
         const dbProduct = response;
         //Delete from global state
-        store.dispatch(actions.deleteProduct(id));
+        store.dispatch(productActions.deleteProduct(id));
     }
 }
 

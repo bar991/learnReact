@@ -49,7 +49,7 @@ export function EmployeeList(): JSX.Element {
                       </table>
                       
             {employees.length ===0 && <Spinner />}
-            {employees.map(e => <EmployeeCard key={e.id} employee={e} />)}
+            {/*employees.map(e => <EmployeeCard key={e.id} employee={e} />)*/}
         </div>
     );
 }

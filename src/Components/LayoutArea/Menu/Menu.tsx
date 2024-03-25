@@ -5,6 +5,10 @@ import "./Menu.css";
 export function Menu(): JSX.Element {
     return (
         <div className="Menu">
+            <NavLink to="/contact-us">Contact Us</NavLink>
+
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/register">Register Now!</NavLink>
             <NavLink to="/home">Home</NavLink>
             <NavLink to="products" end>Products</NavLink>
             <NavLink to="/about">About</NavLink>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { EmployeeModel } from "../Models/EmployeeModel";
-import { actions, employeesactions, store } from "../Storage/store";
+import { productActions, employeesactions, store } from "../Storage/store";
 import { appConfig } from "../Utils/AppConfig";
 
 class EmployeeService {
